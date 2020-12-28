@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation circle</title>
+    <style>
+
+        body {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        #wrapper {
+
+            margin: 0 auto;
+            padding: 200px 0;
+            width: auto;
+            height: 1000px;
+            background-color: #050210;
+
+        }/*end of wrapper*/
+        
+        #circle-1 {
+            position: absolute;
+            left:0;
+            right:0;
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            border-radius: 100%;
+            background: linear-gradient(#fb5dad,#55fb9f, #b97aff);
+            filter: blur(1px);
+
+
+
+            animation-name: my-animation1;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }/*end of circle-1*/
+
+
+        @keyframes my-animation1 {
+
+            from {
+                transform: rotateZ(0deg);
+            }
+
+            to {
+                transform: rotateZ(360deg);
+            }
+
+        }/*end of my-animation1*/
+
+        #circle-1::before {
+            content: "";
+            position: absolute;
+            left:0;
+            right:0;
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            border-radius: 100%;
+            background: linear-gradient(#fb5dad,#55fb9f, #b97aff);
+            filter: blur(80px);
+
+
+
+            animation-name: my-animation1;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }/*end of circle-1:::before*/
+         
+
+
+
+
+
+
+        #circle-2 {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 225px;
+            content: "";
+            width: 450px;
+            height: 450px;
+            margin: 0 auto;
+            background:  #050210;
+            border-radius: 100%;
+
+        }/*end of circle-2*/
+
+
+       
+
+
+        #circle-2::before {
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0px;
+            content: "";
+            width: 450px;
+            height: 450px;
+            margin: 0 auto;
+            background:#0b0524;
+            border-radius: 100%;
+
+            
+            
+            animation-name: my-animation2;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-fill-mode:forwards;
+
+
+        }/*end of circle-2::before*/
+
+
+
+        @keyframes my-animation2 {
+
+            from {
+                transform: scale(0.1, 0.1);
+            }
+
+            to {
+                transform: scale(1, 1);
+            }
+
+        }/*end of my-animation2*/
+
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="circle-1"></div>
+        <div id="circle-2"></div>
+
+    </div><!--end of wrapper-->
+</body>
+</html>
